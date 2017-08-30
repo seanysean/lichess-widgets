@@ -4,15 +4,15 @@ request.open('GET', lichess);
 request.responseType = 'json';
 request.send();
 request.onload = function() {
-  var lichessAPI = request.reponse;
+  var lichessObject = request.reponse;
   var link = document.getElementById("link");
   var online = document.getElementById("circle");
   var name = document.getElementById("name");
-  if (lichessAPI["online"]) {
+  if (lichessObject["online"]) {
     online.classList.add("online");
   }
   else {
     online.classList.remove("online");
   }
-  console.log(lichessAPI);
+  console.log(lichessObject);
 }
