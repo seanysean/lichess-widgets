@@ -10,8 +10,8 @@ body {
   font-family: "Lato", sans-serif;
   color: #999;
 }
-.lichess_widget .link,
-.lichess_widget .circle,
+.lichess_widget #link,
+.lichess_widget #circle,
 .lichess_widget [data-title]::after{
   transition: all 0.25s ease;
 }
@@ -29,31 +29,31 @@ body {
   background: #333;
   border: 1px solid #555;
 }
-.lichess_widget .link {
+.lichess_widget #link {
   color: #36a;
   text-decoration: none;
   font-size: 16px;
   position: relative;
   left: 5px;
 }
-.lichess_widget .link:hover {
+.lichess_widget #link:hover {
   color: #36f;
 }
-.lichess_widget .link #title {
+.lichess_widget #link #title {
   color: #aa8300;
   font-weight: bold;
 }
-.lichess_widget .circle {
+.lichess_widget #circle {
   color: #888;
 }
-.lichess_widget .circle.online {
+.lichess_widget #circle.online {
   color: #373;
 }
-.lichess_widget .name {
+.lichess_widget #name {
   font-weight: bold;
   color: #aaa;
 }
-.lichess_widget .bio {
+.lichess_widget #bio {
   font-style: italic;
   position: relative;
   top: -5px;
@@ -91,16 +91,16 @@ body {
 .lichess_widget [data-title]:hover::after {
   opacity: 0.7;
 }
-.lichess_widget .rating {
+.lichess_widget #rating {
   margin-top: 20px;
   display: block;
   color: #36a;
   text-decoration: none;
   border-bottom: 1px dotted transparent;
 }
-.lichess_widget .rating:hover {
+.lichess_widget #rating:hover {
   border-bottom: 1px dotted #36a;
 }
-.lichess_widget .rating .numgames {
+.lichess_widget #rating #numgames {
   float: right;
 }
