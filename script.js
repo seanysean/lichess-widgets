@@ -1,4 +1,5 @@
-var lichess = "https://lichess.org/api/user/nevergonnaberserk";
+var usernameInput = prompt("Enter a lichess.org username");
+var lichess = `https://lichess.org/api/user/${usernameInput}`;
 var request = new XMLHttpRequest();
 request.open('GET', lichess);
 request.responseType = 'json';
