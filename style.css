@@ -1,0 +1,69 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Lato');
+html {
+  height: 100%;
+}
+body {
+  background: #003333;
+  background: linear-gradient(42deg,#0E2F44,#44230E);
+  background-size: cover;
+  background-position: fixed;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  color: #999;
+}
+.lichess_widget .link,
+.lichess_widget .circle{
+  transition: all 0.25s ease;
+}
+.widget {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.lichess_widget {
+  width: 250px;
+  height: 180px;
+  padding: 10px;
+  background: #333;
+  border: 1px solid #555;
+}
+.lichess_widget .link {
+  color: #36a;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  left: 5px;
+}
+.lichess_widget .link:hover {
+  color: #36f;
+}
+.lichess_widget .circle {
+  color: #888;
+}
+.lichess_widget .circle.online {
+  color: #373;
+}
+.lichess_widget .name {
+  font-weight: bold;
+  color: #aaa;
+}
+.lichess_widget .bio {
+  font-style: italic;
+  position: relative;
+  top: -5px;
+}
+.lichess_widget .icons a {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #888;
+  text-decoration: none;
+  font-size: 20px;
+}
+.lichess_widget .icons a:hover {
+  background: #555;
+  color: #aaa;
+  border-color: #444;
+}
