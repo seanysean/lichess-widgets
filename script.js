@@ -8,7 +8,7 @@ request.onload = function() {
   var link = document.getElementById("link");
   var online = document.getElementById("circle");
   var name = document.getElementById("name");
-  if (lichessAPI["online") {
+  if (lichessAPI["online"]) {
     online.classList.add("online");
   }
   else {
