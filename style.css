@@ -1,5 +1,3 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url('https://fonts.googleapis.com/css?family=Lato');
 html {
   height: 100%;
 }
@@ -13,7 +11,8 @@ body {
   color: #999;
 }
 .lichess_widget .link,
-.lichess_widget .circle{
+.lichess_widget .circle,
+.lichess_widget .icons a::after{
   transition: all 0.25s ease;
 }
 .widget {
@@ -57,13 +56,31 @@ body {
 }
 .lichess_widget .icons a {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 5px 0;
   color: #888;
   text-decoration: none;
   font-size: 20px;
+  width: 19%;
+  text-align: center;
 }
 .lichess_widget .icons a:hover {
   background: #555;
   color: #aaa;
   border-color: #444;
+}
+.lichess_widget [data-title]::after {
+  content: attr(data-title);
+  font-family: "Lato",sans-serif;
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 25px;
+  font-size: 15px;
+  background: #111;
+  border: 1px solid #333;
+  padding: 3px;
+  border-radius: 3px;
+  opacity: 0;
+}
+.lichess_widget .icons a:hover::after {
+  opacity: 0.7;
 }
