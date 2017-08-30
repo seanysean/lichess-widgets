@@ -1,0 +1,2 @@
+# lichess-widgets
+Personal Project
