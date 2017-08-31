@@ -15,7 +15,7 @@ request.onload = function() {
   }
   else {
     online.classList.remove("online");
-    online.datatitle = "offline";
+    online.["datatitle"] = "offline";
   }
   console.log(lichessAPI);
 }
