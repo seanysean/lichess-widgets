@@ -47,7 +47,7 @@ request.onload = function() {
     bio.style.display = "none";
   }
   ratingLink.href = `https://lichess.org/@/${usernameInput}/perf/classical`
-  rating.innerHTML = lichessAPI["perfs"]["classical"]["rating"];
-  gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + "Games";
+  rating.innerHTML = "Classical: " + lichessAPI["perfs"]["classical"]["rating"];
+  gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + " Games";
   console.log(lichessAPI);
 }
