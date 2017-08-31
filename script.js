@@ -28,7 +28,15 @@ request.onload = function() {
     title.style.display = "none";
   }
   username.innerHTML = usernameInput;
-  name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`;
+  if (lichessAPI["profile"]["firstName"] && ${lichessAPI["profile"]["lastName"]}) {
+    name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`;
+  }
+  else if (lichessAPI["profile"]["firstName"]) {
+    name.innerHTML = lichessAPI["profile"]["firstName"];
+  }
+  else {
+    name.style.display = "none";
+  } 
   bio.innerHTML = lichessAPI["profile"]["bio"];
   console.log(lichessAPI);
 }
