@@ -18,7 +18,7 @@ request.onload = function() {
   var tv = document.getElementById("tv"),
       msg = document.getElementById("msg"),
       profile = document.getElementById("profile"),
-      tourny = tv = document.getElementById("tourny"),
+      tourny = document.getElementById("tourny"),
       study = document.getElementById("study");
   
   if (lichessAPI["online"]) {
