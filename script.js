@@ -17,11 +17,11 @@ request.onload = function() {
   var gameNum = document.getElementById("numgames");
   if (lichessAPI["online"]) {
     online.classList.add("online");
-    online.setAttribute(datatitle, "online")
+    online.setAttribute(datatitle, "online");
   }
   else {
     online.classList.remove("online");
-    online.setAttribute(datatitle, "offline")
+    online.setAttribute(datatitle, "offline");
   }
   link.href = lichessAPI["url"];
   if (lichessAPI["title"]) {
