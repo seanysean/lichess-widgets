@@ -28,7 +28,7 @@ request.onload = function() {
     title.style.display = "none";
   }
   username.innerHTML = usernameInput;
-  if (lichessAPI["profile"]["firstName"] && ${lichessAPI["profile"]["lastName"]}) {
+  if (lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]) {
     name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`;
   }
   else if (lichessAPI["profile"]["firstName"]) {
