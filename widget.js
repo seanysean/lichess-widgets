@@ -52,7 +52,6 @@ function lichess_widget(size,user,theme) {
       online.setAttribute("datatitle", "online");
     }
     else {
-      online.classList.remove("online");
       online.setAttribute("datatitle", "offline");
     }
     if (lichessAPI["patron"] === true) {
