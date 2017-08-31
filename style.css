@@ -44,6 +44,7 @@ body {
 .lichess_widget #link #title {
   color: #aa8300;
   font-weight: bold;
+  font-family: sans-serif;
 }
 .lichess_widget #circle {
   color: #888;
