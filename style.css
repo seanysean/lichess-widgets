@@ -50,6 +50,11 @@ body {
 .lichess_widget #circle.online {
   color: #373;
 }
+.lichess_widget .lichess {
+  color: #aaa;
+  font-weight: bold;
+  float: right;
+}
 .lichess_widget #name {
   font-weight: bold;
   color: #aaa;
