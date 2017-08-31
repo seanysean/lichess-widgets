@@ -12,6 +12,7 @@ body {
 }
 .lichess_widget #link,
 .lichess_widget #circle,
+.lichess_widget .lichess,
 .lichess_widget [datatitle]::after{
   transition: all 0.25s ease;
 }
@@ -54,6 +55,10 @@ body {
   color: #aaa;
   font-weight: bold;
   float: right;
+  text-decoration: none;
+}
+.lichess_widget .lichess:hover {
+  color: #eee;
 }
 .lichess_widget #name {
   font-weight: bold;
