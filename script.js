@@ -7,8 +7,10 @@ request.send();
 request.onload = function() {
   var lichessAPI = request.response;
   var link = document.getElementById("link");
+  var username = document.getElementById("username");
   var online = document.getElementById("circle");
   var name = document.getElementById("name");
+  var bio = document.getElementById("bio");
   if (lichessAPI["online"]) {
     online.classList.add("online");
     online["datatitle"] = "online";
@@ -17,6 +19,9 @@ request.onload = function() {
     online.classList.remove("online");
     online["datatitle"] = "offline";
   }
-  name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`
+  link.href = lichessAPI["url"];
+  username.innerHTML = usernameInput;
+  name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`;
+  bio.innerHTML = lichessAPI["profile"]["bio"];
   console.log(lichessAPI);
 }
