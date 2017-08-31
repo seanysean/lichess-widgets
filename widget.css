@@ -1,0 +1,100 @@
+#lichess_widget #link,
+#lichess_widget #circle,
+#lichess_widget .lichess,
+#lichess_widget [datatitle]::after{
+  transition: all 0.25s ease;
+}
+#lichess_widget {
+  min-width: 250px;
+  max-width: 350px;
+  padding: 10px;
+  background: #333;
+  border: 1px solid #555;
+  font-family: "Lato", sans-serif;
+  color: #999;
+}
+#lichess_widget #link {
+  color: #36a;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  left: 5px;
+}
+#lichess_widget #link:hover {
+  color: #36f;
+}
+#lichess_widget #link #title {
+  color: #aa8300;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+#lichess_widget #circle {
+  color: #888;
+}
+#lichess_widget #circle.online {
+  color: #373;
+}
+#lichess_widget .lichess {
+  color: #aaa;
+  font-weight: bold;
+  float: right;
+  text-decoration: none;
+}
+#lichess_widget .lichess:hover {
+  color: #eee;
+}
+#lichess_widget #name {
+  font-weight: bold;
+  color: #aaa;
+}
+#lichess_widget #bio {
+  font-style: italic;
+  position: relative;
+  top: -5px;
+}
+#lichess_widget .icons {
+  display: flex;
+}
+#lichess_widget .icons a {
+  display: inline-block;
+  padding: 5px 0;
+  color: #888;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+#lichess_widget .icons a:hover {
+  background: #555;
+  color: #aaa;
+  border-color: #444;
+}
+#lichess_widget [datatitle]::after {
+  content: attr(datatitle);
+  font-family: "Lato",sans-serif;
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 25px;
+  font-size: 15px;
+  background: #111;
+  border: 1px solid #333;
+  padding: 3px;
+  border-radius: 3px;
+  opacity: 0;
+}
+#lichess_widget [datatitle]:hover::after {
+  opacity: 0.7;
+}
+#lichess_widget #rating {
+  margin-top: 20px;
+  display: block;
+  color: #36a;
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+}
+#lichess_widget #rating:hover {
+  border-bottom: 1px dotted #36a;
+}
+#lichess_widget #rating #numgames {
+  float: right;
+}
