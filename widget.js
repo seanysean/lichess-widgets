@@ -1,4 +1,5 @@
-var widget = document.getElementById("lichess_widget");
+var widget = document.createElement("DIV");
+widget.id = "lichess_widget";
 widget.innerHTML = `<span id='circle' datatitle='online' class='fa fa-circle'></span> 
                     <a id='link' target='_blank' href='https://lichess.org/@/seanysean'> 
                     <span id='title'>.. </span> 
@@ -18,7 +19,7 @@ widget.innerHTML = `<span id='circle' datatitle='online' class='fa fa-circle'></
                     <span id='ratingNum'>Classical: Loading...</span>
                     <span id='numgames'>Loading Games</span>
                     </a>`;
-function lichess_widget(size,user) {
+function lichess_widget(size,user,theme) {    
   var lichess = `https://lichess.org/api/user/${user}`;
   var request = new XMLHttpRequest();
   request.open('GET', lichess);
@@ -35,13 +36,17 @@ function lichess_widget(size,user) {
     var ratingLink = document.getElementById("rating");
     var rating = document.getElementById("ratingNum");
     var gameNum = document.getElementById("numgames");
-
     var tv = document.getElementById("tv"),
         msg = document.getElementById("msg"),
         profile = document.getElementById("profile"),
         tourny = document.getElementById("tourny"),
         study = document.getElementById("study");
-
+    if (theme === "light") {
+      widget.classList.add("light");
+    }
+    else {
+      widget.classList.add("dark");
+    }
     if (lichessAPI["online"]) {
       online.classList.add("online");
       online.setAttribute("datatitle", "online");
