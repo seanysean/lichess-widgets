@@ -19,7 +19,7 @@ widget.innerHTML = `<span id='circle' datatitle='online' class='fa fa-circle'></
                     <span id='ratingNum'>Classical: Loading...</span>
                     <span id='numgames'>Loading Games</span>
                     </a>`;
-document.body.appendChild(widget);
+document.write(widget);
 function lichess_widget(size,user,theme) {    
   var lichess = `https://lichess.org/api/user/${user}`;
   var request = new XMLHttpRequest();
