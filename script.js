@@ -29,6 +29,14 @@ request.onload = function() {
     online.classList.remove("online");
     online.setAttribute("datatitle", "offline");
   }
+  if (lichessAPI["patron"] === true) {
+    online.classList.add("fa-diamond");
+    online.classList.remove("fa-circle");
+  }
+  else {
+    online.classList.remove("fa-diamond");
+    online.classList.add("fa-circle");
+  }
   link.href = lichessAPI["url"];
   if (lichessAPI["title"]) {
     title.innerHTML = lichessAPI["title"];
