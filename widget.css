@@ -13,7 +13,7 @@
 }
 #lichess_widget.light {
   color: #555;
-  background: #999;
+  background: #ccc;
   border: 2px solid #777;
 }
 #lichess_widget {
@@ -85,7 +85,7 @@
 #lichess_widget.dark .icons a {
   color: #888;
 }
-#lichess_widget.dark .icons a {
+#lichess_widget.light .icons a {
   color: #444;
 }
 #lichess_widget .icons a {
@@ -110,7 +110,7 @@
   background: #111;  
   border: 1px solid #333;
 }
-#lichess_widget.dark [datatitle]::after {
+#lichess_widget.light [datatitle]::after {
   background: #eee;  
   border: 1px solid #bbb;
 }
