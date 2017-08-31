@@ -89,7 +89,7 @@ function lichess_widget(size,user) {
     }
     msg.href = `https://lichess.org/inbox/new?user=${user}`;
     profile.href = lichessAPI["url"];
-    tourny.href = `https://lichess.org/@/${usernameInput}/tournaments/recent`;
+    tourny.href = `https://lichess.org/@/${user}/tournaments/recent`;
     study.href = `https://lichess.org/study/by/${user}`;
     ratingLink.href = `https://lichess.org/@/${user}/perf/classical`;
     rating.innerHTML = "Classical: " + lichessAPI["perfs"]["classical"]["rating"];
