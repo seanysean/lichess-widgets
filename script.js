@@ -12,6 +12,9 @@ request.onload = function() {
   var title = document.getElementById("title");
   var name = document.getElementById("name");
   var bio = document.getElementById("bio");
+  var ratingLink = document.getElementById("rating");
+  var rating = document.getElementById("ratingNum");
+  var gameNum = document.getElementById("numgames");
   if (lichessAPI["online"]) {
     online.classList.add("online");
     online["datatitle"] = "online";
@@ -37,6 +40,14 @@ request.onload = function() {
   else {
     name.style.display = "none";
   } 
-  bio.innerHTML = lichessAPI["profile"]["bio"];
+  if (lichessAPI["profile"]["bio"]) {
+    bio.innerHTML = lichessAPI["profile"]["bio"];
+  }
+  else {
+    bio.style.display = "none";
+  }
+  ratingLink.href = `https://lichess.org/@/${usernameInput}/perf/classical`
+  rating.innerHTML = lichessAPI["perfs"]["classical"]["rating"];
+  gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + "Games";
   console.log(lichessAPI);
 }
