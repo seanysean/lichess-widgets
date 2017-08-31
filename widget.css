@@ -14,7 +14,7 @@
 #lichess_widget.light {
   color: #777;
   background: #eee;
-  border: 2px solid #bbb;
+  border: 2px solid #ccc;
 }
 #lichess_widget {
   min-width: 250px;
@@ -39,11 +39,14 @@
   font-weight: bold;
   font-family: sans-serif;
 }
+#lichess_widget #circle {
+  font-size: 13px;
+}
 #lichess_widget.dark #circle {
   color: #888;
 }
 #lichess_widget.light #circle {
-  color: #444;
+  color: #777;
 }
 #lichess_widget #circle.online {
   color: #373;
