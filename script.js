@@ -17,5 +17,6 @@ request.onload = function() {
     online.classList.remove("online");
     online["datatitle"] = "offline";
   }
+  name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`
   console.log(lichessAPI);
 }
