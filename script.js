@@ -15,6 +15,12 @@ request.onload = function() {
   var ratingLink = document.getElementById("rating");
   var rating = document.getElementById("ratingNum");
   var gameNum = document.getElementById("numgames");
+  var tv = document.getElementById("tv"),
+      msg = document.getElementById("msg"),
+      profile = document.getElementById("profile"),
+      tourny = tv = document.getElementById("tourny"),
+      study = document.getElementById("study")
+  
   if (lichessAPI["online"]) {
     online.classList.add("online");
     online.setAttribute("datatitle", "online");
@@ -46,8 +52,19 @@ request.onload = function() {
   else {
     bio.style.display = "none";
   }
-  ratingLink.href = `https://lichess.org/@/${usernameInput}/perf/classical`
+  if (lichessAPI["playing"]) {
+    tv.href = lichessAPI["playing"];
+  }
+  else {
+    tv.style.display = "none";
+  }
+  msg.href = `https://lichess.org/inbox/new?user=${usernameInput}`;
+  profile.href = lichessAPI["url"];
+  tourny.href = `https://lichess.org/@/${usernameInput}/tournaments/recent`;
+  study.href = `https://lichess.org/study/by/${usernameInput};
+  ratingLink.href = `https://lichess.org/@/${usernameInput}/perf/classical`;
   rating.innerHTML = "Classical: " + lichessAPI["perfs"]["classical"]["rating"];
   gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + " Games";
+  
   console.log(lichessAPI);
 }
