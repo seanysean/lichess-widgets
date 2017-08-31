@@ -19,7 +19,7 @@ request.onload = function() {
       msg = document.getElementById("msg"),
       profile = document.getElementById("profile"),
       tourny = tv = document.getElementById("tourny"),
-      study = document.getElementById("study")
+      study = document.getElementById("study");
   
   if (lichessAPI["online"]) {
     online.classList.add("online");
@@ -61,7 +61,7 @@ request.onload = function() {
   msg.href = `https://lichess.org/inbox/new?user=${usernameInput}`;
   profile.href = lichessAPI["url"];
   tourny.href = `https://lichess.org/@/${usernameInput}/tournaments/recent`;
-  study.href = `https://lichess.org/study/by/${usernameInput};
+  study.href = `https://lichess.org/study/by/${usernameInput}`;
   ratingLink.href = `https://lichess.org/@/${usernameInput}/perf/classical`;
   rating.innerHTML = "Classical: " + lichessAPI["perfs"]["classical"]["rating"];
   gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + " Games";
