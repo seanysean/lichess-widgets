@@ -9,6 +9,7 @@ request.onload = function() {
   var link = document.getElementById("link");
   var username = document.getElementById("username");
   var online = document.getElementById("circle");
+  var title = document.getElementById("title");
   var name = document.getElementById("name");
   var bio = document.getElementById("bio");
   if (lichessAPI["online"]) {
@@ -20,6 +21,12 @@ request.onload = function() {
     online["datatitle"] = "offline";
   }
   link.href = lichessAPI["url"];
+  if (lichessAPI["title"]) {
+    title.innerHTML = lichessAPI["title"];
+  }
+  else {
+    title.style.display = "none";
+  }
   username.innerHTML = usernameInput;
   name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`;
   bio.innerHTML = lichessAPI["profile"]["bio"];
