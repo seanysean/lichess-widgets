@@ -11,11 +11,11 @@ request.onload = function() {
   var name = document.getElementById("name");
   if (lichessAPI["online"]) {
     online.classList.add("online");
-    online.data-title = "online";
+    online.datatitle = "online";
   }
   else {
     online.classList.remove("online");
-    online.data-title = "offline";
+    online.datatitle = "offline";
   }
   console.log(lichessAPI);
 }
