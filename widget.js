@@ -30,7 +30,7 @@ function lichess_widget(size,user,theme) {
     var lichessAPI = request.response;
     var link = document.getElementById("link");
     var username = document.getElementById("username");
-    var online = document.getElementById("circle");
+    var circle = document.getElementById("circle");
     var title = document.getElementById("title");
     var name = document.getElementById("name");
     var bio = document.getElementById("bio");
@@ -49,19 +49,19 @@ function lichess_widget(size,user,theme) {
       widget.classList.add("dark");
     }
     if (lichessAPI["online"]) {
-      online.classList.add("online");
-      online.setAttribute("datatitle", "online");
+      circle.classList.add("online");
+      circle.setAttribute("datatitle", "online");
     }
     else {
-      online.setAttribute("datatitle", "offline");
+      circle.setAttribute("datatitle", "offline");
     }
     if (lichessAPI["patron"] === true) {
-      online.classList.add("fa-diamond");
-      online.classList.remove("fa-circle");
+      circle.classList.add("fa-diamond");
+      circle.classList.remove("fa-circle");
     }
     else {
-      online.classList.remove("fa-diamond");
-      online.classList.add("fa-circle");
+      circle.classList.remove("fa-diamond");
+      circle.classList.add("fa-circle");
     }
     link.href = lichessAPI["url"];
     if (lichessAPI["title"]) {
