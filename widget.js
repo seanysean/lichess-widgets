@@ -1,12 +1,12 @@
 var widget = document.getElementById("lichess_widget");
 widget.innerHTML = `<span id='circle' datatitle='online' class='fa fa-circle'></span> 
                     <a id='link' target='_blank' href='https://lichess.org/@/seanysean'> 
-                    <span id='title'>GM </span> 
-                    <span id='username'>seanysean</span>
+                    <span id='title'>.. </span> 
+                    <span id='username'>Loading...</span>
                     </a>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
-                    <p id='name'>Sean B</p>
-                    <div id='bio'>Am I a hacker? No. Mod? No.</div>
+                    <p id='name'>Loading...</p>
+                    <div id='bio'>Loading...</div>
                     <div class='icons'>
                     <a id='tv' href='' target='_blank' datatitle='View game in progress' class='fa fa-tv'></a>
                     <a id='msg' href='' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
@@ -15,8 +15,8 @@ widget.innerHTML = `<span id='circle' datatitle='online' class='fa fa-circle'></
                     <a id='study' href='' target='_blank' datatitle='View studies' class='fa fa-globe'></a>
                     </div>
                     <a href='' target='_blank' id='rating' datatitle='View stats'>
-                    <span id='ratingNum'>Classical: 2400</span>
-                    <span id='numgames'>1042 Games</span>
+                    <span id='ratingNum'>Classical: Loading...</span>
+                    <span id='numgames'>Loading Games</span>
                     </a>`;
 function lichess_widget(size,user) {
   var lichess = `https://lichess.org/api/user/${user}`;
