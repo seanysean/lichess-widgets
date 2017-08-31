@@ -12,9 +12,9 @@
   border: 2px solid #555;
 }
 #lichess_widget.light {
-  color: #555;
+  color: #777;
   background: #ccc;
-  border: 2px solid #777;
+  border: 2px solid #aaa;
 }
 #lichess_widget {
   min-width: 250px;
@@ -52,7 +52,7 @@
   color: #aaa;
 }
 #lichess_widget.light .lichess {
-  color: #333;
+  color: #555;
 }
 #lichess_widget .lichess {
   font-weight: bold;
