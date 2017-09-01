@@ -8,6 +8,7 @@ function lichess_widget(size,user,theme) {
   request.responseType = 'json';
   request.send();
   request.onload = function() {
+    document.body.appendChild(widget);  
     var lichessAPI = request.response;
     var link = document.getElementById("link");
     var username = document.getElementById("username");
@@ -97,6 +98,6 @@ function lichess_widget(size,user,theme) {
     ratingLink.href = `https://lichess.org/@/${user}/perf/classical`;
     rating.innerHTML = "Classical: " + lichessAPI["perfs"]["classical"]["rating"];
     gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + " Games";*/
-    document.body.appendChild(widget);  
+    
   }
 }
