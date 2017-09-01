@@ -3,7 +3,7 @@ function lichess_widget(size,user,theme) {
 var widget = document.createElement("DIV");
 widget.id = "lichess_widget";
 widget.innerHTML = `<span id='circle' datatitle='offline' class='fa fa-circle'></span> 
-                    <a id='link' target='_blank' href='https://lichess.org/@/seanysean'> 
+                    <a id='link' target='_blank' href=''> 
                     <span id='title'>.. </span> 
                     <span id='username'>Loading...</span>
                     </a>
@@ -101,5 +101,6 @@ document.body.appendChild(widget);
     ratingLink.href = `https://lichess.org/@/${user}/perf/classical`;
     rating.innerHTML = "Classical: " + lichessAPI["perfs"]["classical"]["rating"];
     gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + " Games";
+    document.body.appendChild(widget);  
   }
 }
