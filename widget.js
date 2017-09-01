@@ -16,7 +16,14 @@ function lichess_widget(size,user,theme) {
     var titled;
     var playing;
     var hide;
+    var sizeCSS;
     var online = "offline";
+    if (size === "large") {
+      sizeCSS = "";
+    }
+    else {
+      sizeCSS = "display:none";
+    }
     if (theme === "light") {
       widget.classList.add("light");
     }
@@ -63,9 +70,9 @@ function lichess_widget(size,user,theme) {
                       <span id='username'>${user}</span>
                     </a>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
-                    <p id='name'>${nameJS}</p>
-                    <div id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
-                    <div class='icons'>
+                    <p style='${sizeCSS}' id='name'>${nameJS}</p>
+                    <div style='${sizeCSS}' id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
+                    <div style='${sizeCSS}' class='icons'>
                       <a href='${playing}' target='_blank' style='${hide}' datatitle='View game in progress' class='fa fa-tv'></a>
                       <a href='https://lichess.org/inbox/new?user=${user}' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
                       <a href='${lichessAPI["url"]}' target='_blank' datatitle='View profile' class='fa fa-user'></a>
