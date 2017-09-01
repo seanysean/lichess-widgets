@@ -16,20 +16,7 @@ function lichess_widget(size,user,theme) {
     var titled;
     var playing;
     var hide;
-    /*var link = document.getElementById("link");
-    var username = document.getElementById("username");*/
     var online = "offline";
-    /*var title = document.getElementById("title");
-    var name = document.getElementById("name");
-    var bio = document.getElementById("bio");
-    var ratingLink = document.getElementById("rating");
-    var rating = document.getElementById("ratingNum");
-    var gameNum = document.getElementById("numgames");
-    var tv = document.getElementById("tv"),
-        msg = document.getElementById("msg"),
-        profile = document.getElementById("profile"),
-        tourny = document.getElementById("tourny"),
-        study = document.getElementById("study");*/
     if (theme === "light") {
       widget.classList.add("light");
     }
@@ -72,30 +59,23 @@ function lichess_widget(size,user,theme) {
     };
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
-                    <span id='title'>${titled}</span> 
-                    <span id='username'>${user}</span>
+                      <span id='title'>${titled}</span> 
+                      <span id='username'>${user}</span>
                     </a>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
                     <p id='name'>${nameJS}</p>
                     <div id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
                     <div class='icons'>
-                    <a id='tv' href='${playing}' target='_blank' style='${hide}' datatitle='View game in progress' class='fa fa-tv'></a>
-                    <a id='msg' href='https://lichess.org/inbox/new?user=${user}' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
-                    <a id='profile' href='${lichessAPI["url"]}' target='_blank' datatitle='View profile' class='fa fa-user'></a>
-                    <a id='tourny' href='https://lichess.org/@/${user}/tournaments/recent' target='_blank' datatitle='Tournaments' class='fa fa-trophy'></a>
-                    <a id='study' href='https://lichess.org/study/by/${user}' target='_blank' datatitle='View studies' class='fa fa-globe'></a>
+                      <a href='${playing}' target='_blank' style='${hide}' datatitle='View game in progress' class='fa fa-tv'></a>
+                      <a href='https://lichess.org/inbox/new?user=${user}' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
+                      <a href='${lichessAPI["url"]}' target='_blank' datatitle='View profile' class='fa fa-user'></a>
+                      <a href='https://lichess.org/@/${user}/tournaments/recent' target='_blank' datatitle='Tournaments' class='fa fa-trophy'></a>
+                      <a href='https://lichess.org/study/by/${user}' target='_blank' datatitle='View studies' class='fa fa-globe'></a>
+                      <a href='https://lichess.org/?user=${user}#friend' target='_blank' datatitle='Challenge' class='fa fa-delicious'></a>
                     </div>
                     <a href='https://lichess.org/@/${user}/perf/classical' target='_blank' id='rating' datatitle='View stats'>
-                    <span id='ratingNum'>Classical: ${lichessAPI["perfs"]["classical"]["rating"]}</span>
-                    <span id='numgames'>${lichessAPI["perfs"]["classical"]["games"]}</span>
-                    </a>`;   
-    /*msg.href = `https://lichess.org/inbox/new?user=${user}`;
-    profile.href = lichessAPI["url"];
-    tourny.href = `https://lichess.org/@/${user}/tournaments/recent`;
-    study.href = `https://lichess.org/study/by/${user}`;
-    ratingLink.href = `https://lichess.org/@/${user}/perf/classical`;
-    rating.innerHTML = "Classical: " + lichessAPI["perfs"]["classical"]["rating"];
-    gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + " Games";*/
-    
+                      <span id='ratingNum'>Classical: ${lichessAPI["perfs"]["classical"]["rating"]}</span>
+                      <span id='numgames'>${lichessAPI["perfs"]["classical"]["games"]} Games</span>
+                    </a>`;    
   }
 }
