@@ -54,6 +54,7 @@ document.body.appendChild(widget);
       circle.setAttribute("datatitle", "online");
     }
     else {
+      circle.classList.remove("online");
       circle.setAttribute("datatitle", "offline");
     }
     if (lichessAPI["patron"] === true) {
