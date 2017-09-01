@@ -8,8 +8,8 @@ function lichess_widget(size,user,theme) {
   request.open('GET', lichess);
   request.responseType = 'json';
   request.send();
-  request.onload = function() {
-    document.body.appendChild(widget);  
+  document.body.appendChild(widget);  
+  request.onload = function() { 
     var lichessAPI = request.response;
     var nameJS;
     var patron;
