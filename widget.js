@@ -10,6 +10,7 @@ function lichess_widget(size,user,theme) {
   request.onload = function() {
     document.body.appendChild(widget);  
     var lichessAPI = request.response;
+    var nameJS;
     var link = document.getElementById("link");
     var username = document.getElementById("username");
     var online = "offline";
@@ -50,16 +51,17 @@ function lichess_widget(size,user,theme) {
     else {
       title.style.display = "none";
     };
-    username.innerHTML = user;
-    /*if (lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]) {
-      name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`;
+    username.innerHTML = user;*/
+    if (lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]) {
+      nameJS = lichessAPI["profile"]["firstName"] + " " + lichessAPI["profile"]["lastName"];
     }
     else if (lichessAPI["profile"]["firstName"]) {
-      name.innerHTML = lichessAPI["profile"]["firstName"];
+      nameJS = lichessAPI["profile"]["firstName"];
     }
     else {
-      name.style.display = "none";
+      nameJS = "";
     };
+    /*
     if (lichessAPI["profile"]["bio"]) {
       bio.innerHTML = lichessAPI["profile"]["bio"];
     }
@@ -78,7 +80,7 @@ function lichess_widget(size,user,theme) {
                     <span id='username'>${user}</span>
                     </a>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
-                    <p id='name'>${lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"] ? ${lichessAPI["profile"]["firstName"]} + ${lichessAPI["profile"]["lastName"]} : lichessAPI["profile"]["firstName"] ? lichessAPI["profile"]["firstName"] : ""}</p>
+                    <p id='name'>${nameJS}</p>
                     <div id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
                     <div class='icons'>
                     <a id='tv' href='' target='_blank' datatitle='View game in progress' class='fa fa-tv'></a>
