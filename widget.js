@@ -1,6 +1,7 @@
 
 function lichess_widget(size,user,theme) {
   var widget = document.createElement("DIV");
+  widget.id = "lichess_widget";
   widget.innerHTML = `Loading...`;    
   var lichess = `https://lichess.org/api/user/${user}`;
   var request = new XMLHttpRequest();
