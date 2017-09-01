@@ -1,7 +1,7 @@
 
 function lichess_widget(size,user,theme) {
-var widget = document.createElement("DIV");
-widget.innerHTML = `Loading...`;    
+  var widget = document.createElement("DIV");
+  widget.innerHTML = `Loading...`;    
   var lichess = `https://lichess.org/api/user/${user}`;
   var request = new XMLHttpRequest();
   request.open('GET', lichess);
@@ -28,28 +28,28 @@ widget.innerHTML = `Loading...`;
     }
     else {
       widget.classList.add("dark");
-    }
+    };
     if (lichessAPI["online"]) {
       online = "online";
     }
     else {
       online = "offline";
-    }
-    if (lichessAPI["patron"] === true) {
+    };
+    /*if (lichessAPI["patron"] === true) {
       circle.classList.add("fa-diamond");
       circle.classList.remove("fa-circle");
     }
     else {
       circle.classList.remove("fa-diamond");
       circle.classList.add("fa-circle");
-    }
+    };*/
     link.href = lichessAPI["url"];
     if (lichessAPI["title"]) {
       title.innerHTML = lichessAPI["title"];
     }
     else {
       title.style.display = "none";
-    }
+    };
     username.innerHTML = user;
     if (lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]) {
       name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`;
@@ -59,19 +59,19 @@ widget.innerHTML = `Loading...`;
     }
     else {
       name.style.display = "none";
-    } 
+    };
     if (lichessAPI["profile"]["bio"]) {
       bio.innerHTML = lichessAPI["profile"]["bio"];
     }
     else {
       bio.style.display = "none";
-    }
+    };
     if (lichessAPI["playing"]) {
       tv.href = lichessAPI["playing"];
     }
     else {
       tv.style.display = "none";
-    }
+    };
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa fa-circle ${online}'></span> 
                     <a id='link' target='_blank' href=''> 
                     <span id='title'>.. </span> 
