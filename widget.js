@@ -1,3 +1,5 @@
+
+function lichess_widget(size,user,theme) {
 var widget = document.createElement("DIV");
 widget.id = "lichess_widget";
 widget.innerHTML = `<span id='circle' datatitle='online' class='fa fa-circle'></span> 
@@ -19,8 +21,7 @@ widget.innerHTML = `<span id='circle' datatitle='online' class='fa fa-circle'></
                     <span id='ratingNum'>Classical: Loading...</span>
                     <span id='numgames'>Loading Games</span>
                     </a>`;
-document.write(widget);
-function lichess_widget(size,user,theme) {    
+document.body.appendChild(widget);    
   var lichess = `https://lichess.org/api/user/${user}`;
   var request = new XMLHttpRequest();
   request.open('GET', lichess);
