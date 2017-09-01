@@ -77,7 +77,7 @@ function lichess_widget(size,user,theme) {
                     <span id='username'>${user}</span>
                     </a>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
-                    <p id='name'>${lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]?${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}:lichessAPI["profile"]["firstName"]?lichessAPI["profile"]["firstName"]:""}</p>
+                    <p id='name'>${lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"] ? ${lichessAPI["profile"]["firstName"]} + ${lichessAPI["profile"]["lastName"]} : lichessAPI["profile"]["firstName"] ? lichessAPI["profile"]["firstName"] : ""}</p>
                     <div id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
                     <div class='icons'>
                     <a id='tv' href='' target='_blank' datatitle='View game in progress' class='fa fa-tv'></a>
