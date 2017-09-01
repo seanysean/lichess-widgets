@@ -2,7 +2,7 @@
 function lichess_widget(size,user,theme) {
 var widget = document.createElement("DIV");
 widget.id = "lichess_widget";
-widget.innerHTML = `<span id='circle' datatitle='online' class='fa fa-circle'></span> 
+widget.innerHTML = `<span id='circle' datatitle='offline' class='fa fa-circle'></span> 
                     <a id='link' target='_blank' href='https://lichess.org/@/seanysean'> 
                     <span id='title'>.. </span> 
                     <span id='username'>Loading...</span>
