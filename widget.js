@@ -69,7 +69,7 @@ function lichess_widget(size,user,theme) {
     }
     else {
       hide = "display:none";
-    };*/
+    };
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
                     <span id='title'>${titled}</span> 
