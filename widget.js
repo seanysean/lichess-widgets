@@ -12,10 +12,14 @@ function lichess_widget(size,user,theme) {
     document.body.appendChild(widget);  
     var lichessAPI = request.response;
     var nameJS;
-    var link = document.getElementById("link");
-    var username = document.getElementById("username");
+    var patron;
+    var titled;
+    var playing;
+    var hide;
+    /*var link = document.getElementById("link");
+    var username = document.getElementById("username");*/
     var online = "offline";
-    var title = document.getElementById("title");
+    /*var title = document.getElementById("title");
     var name = document.getElementById("name");
     var bio = document.getElementById("bio");
     var ratingLink = document.getElementById("rating");
@@ -25,7 +29,7 @@ function lichess_widget(size,user,theme) {
         msg = document.getElementById("msg"),
         profile = document.getElementById("profile"),
         tourny = document.getElementById("tourny"),
-        study = document.getElementById("study");
+        study = document.getElementById("study");*/
     if (theme === "light") {
       widget.classList.add("light");
     }
@@ -38,21 +42,18 @@ function lichess_widget(size,user,theme) {
     else {
       online = "offline";
     };
-    /*if (lichessAPI["patron"] === true) {
-      circle.classList.add("fa-diamond");
-      circle.classList.remove("fa-circle");
+    if (lichessAPI["patron"] === true) {
+      patron = "fa-diamond";
     }
     else {
-      circle.classList.remove("fa-diamond");
-      circle.classList.add("fa-circle");
+      patron = "fa-circle";
     };
     if (lichessAPI["title"]) {
-      title.innerHTML = lichessAPI["title"];
+      titled = lichessAPI["title"];
     }
     else {
-      title.style.display = "none";
+      titled = "";
     };
-    username.innerHTML = user;*/
     if (lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]) {
       nameJS = lichessAPI["profile"]["firstName"] + " " + lichessAPI["profile"]["lastName"];
     }
@@ -62,37 +63,31 @@ function lichess_widget(size,user,theme) {
     else {
       nameJS = "";
     };
-    /*
-    if (lichessAPI["profile"]["bio"]) {
-      bio.innerHTML = lichessAPI["profile"]["bio"];
-    }
-    else {
-      bio.style.display = "none";
-    };
     if (lichessAPI["playing"]) {
-      tv.href = lichessAPI["playing"];
+      playing = lichessAPI["playing"];
+      hide = "display:inline";
     }
     else {
-      tv.style.display = "none";
+      hide = "display:none";
     };*/
-    widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa fa-circle ${online}'></span> 
+    widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
-                    <span id='title'>${lichessAPI["title"] ? lichessAPI["title"] : ""}</span> 
+                    <span id='title'>${titled}</span> 
                     <span id='username'>${user}</span>
                     </a>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
                     <p id='name'>${nameJS}</p>
                     <div id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
                     <div class='icons'>
-                    <a id='tv' href='' target='_blank' datatitle='View game in progress' class='fa fa-tv'></a>
-                    <a id='msg' href='' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
-                    <a id='profile' href='' target='_blank' datatitle='View profile' class='fa fa-user'></a>
-                    <a id='tourny' href='' target='_blank' datatitle='Tournaments' class='fa fa-trophy'></a>
-                    <a id='study' href='' target='_blank' datatitle='View studies' class='fa fa-globe'></a>
+                    <a id='tv' href='${playing}' target='_blank' style='${hide}' datatitle='View game in progress' class='fa fa-tv'></a>
+                    <a id='msg' href='https://lichess.org/inbox/new?user=${user}' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
+                    <a id='profile' href='${lichessAPI["url"]}' target='_blank' datatitle='View profile' class='fa fa-user'></a>
+                    <a id='tourny' href='https://lichess.org/@/${user}/tournaments/recent' target='_blank' datatitle='Tournaments' class='fa fa-trophy'></a>
+                    <a id='study' href='https://lichess.org/study/by/${user}' target='_blank' datatitle='View studies' class='fa fa-globe'></a>
                     </div>
-                    <a href='' target='_blank' id='rating' datatitle='View stats'>
-                    <span id='ratingNum'>Classical: Loading...</span>
-                    <span id='numgames'>Loading Games</span>
+                    <a href='https://lichess.org/@/${user}/perf/classical' target='_blank' id='rating' datatitle='View stats'>
+                    <span id='ratingNum'>Classical: ${lichessAPI["perfs"]["classical"]["rating"]}</span>
+                    <span id='numgames'>${lichessAPI["perfs"]["classical"]["games"]}</span>
                     </a>`;   
     /*msg.href = `https://lichess.org/inbox/new?user=${user}`;
     profile.href = lichessAPI["url"];
