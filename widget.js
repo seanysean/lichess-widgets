@@ -42,8 +42,7 @@ function lichess_widget(size,user,theme) {
     else {
       circle.classList.remove("fa-diamond");
       circle.classList.add("fa-circle");
-    };*/
-    link.href = lichessAPI["url"];
+    };
     if (lichessAPI["title"]) {
       title.innerHTML = lichessAPI["title"];
     }
@@ -51,7 +50,7 @@ function lichess_widget(size,user,theme) {
       title.style.display = "none";
     };
     username.innerHTML = user;
-    if (lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]) {
+    /*if (lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]) {
       name.innerHTML = `${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}`;
     }
     else if (lichessAPI["profile"]["firstName"]) {
@@ -71,15 +70,15 @@ function lichess_widget(size,user,theme) {
     }
     else {
       tv.style.display = "none";
-    };
+    };*/
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa fa-circle ${online}'></span> 
-                    <a id='link' target='_blank' href=''> 
-                    <span id='title'>.. </span> 
-                    <span id='username'>Loading...</span>
+                    <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
+                    <span id='title'>${lichessAPI["title"] ? lichessAPI["title"] : ""}</span> 
+                    <span id='username'>${user}</span>
                     </a>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
-                    <p id='name'>Loading...</p>
-                    <div id='bio'>Loading...</div>
+                    <p id='name'>${lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]?${lichessAPI["profile"]["firstName"]} ${lichessAPI["profile"]["lastName"]}:lichessAPI["profile"]["firstName"]?lichessAPI["profile"]["firstName"]:""}</p>
+                    <div id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
                     <div class='icons'>
                     <a id='tv' href='' target='_blank' datatitle='View game in progress' class='fa fa-tv'></a>
                     <a id='msg' href='' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
@@ -91,13 +90,13 @@ function lichess_widget(size,user,theme) {
                     <span id='ratingNum'>Classical: Loading...</span>
                     <span id='numgames'>Loading Games</span>
                     </a>`;   
-    msg.href = `https://lichess.org/inbox/new?user=${user}`;
+    /*msg.href = `https://lichess.org/inbox/new?user=${user}`;
     profile.href = lichessAPI["url"];
     tourny.href = `https://lichess.org/@/${user}/tournaments/recent`;
     study.href = `https://lichess.org/study/by/${user}`;
     ratingLink.href = `https://lichess.org/@/${user}/perf/classical`;
     rating.innerHTML = "Classical: " + lichessAPI["perfs"]["classical"]["rating"];
-    gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + " Games";
+    gameNum.innerHTML = lichessAPI["perfs"]["classical"]["games"] + " Games";*/
     document.body.appendChild(widget);  
   }
 }
