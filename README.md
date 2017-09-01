@@ -29,3 +29,10 @@ If you notice any bugs, please report them in the issues section. Also, if you a
 
 ## To Do
 Perhaps a little more CSS styling, and more features, such as a way for users to choose what rating they would like to display on their widget, instead of thier classical rating.
+
+## Credits
+I'm not sure if this is needed... since right now I'm probably the only one using this but, here's the credits.
+
+Icons by [Font Awesome](http://fontawesome.io/) hosted by [w3schools](https://www.w3schools.com/icons/fontawesome_icons_intro.asp).<br>
+Font ["Lato"](https://fonts.googleapis.com/css?family=Lato) from [Google Fonts](https://fonts.google.com/).<br>
+And, as mentioned earlier, [lichess.org's API](https://github.com/ornicar/lila#http-api).
