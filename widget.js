@@ -124,7 +124,7 @@ function lichess_widget(size,user,theme,rating) {
         variant = "ultraBullet";
         hidden = b;
     }   
-    else {
+    else if(rating === "none" || rating === undefined) {
         hidden = a;
     }
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
