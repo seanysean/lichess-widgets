@@ -125,6 +125,7 @@ function lichess_widget(size,user,theme,rating) {
         hidden = b;
     }   
     else if(rating === "none" || rating === undefined) {
+        variant = "None";
         hidden = a;
     }
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
