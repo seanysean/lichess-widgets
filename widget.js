@@ -18,6 +18,10 @@ function lichess_widget(size,user,theme,rating) {
     var hide;
     var sizeCSS;
     var online = "offline";
+    let a = "display:none";
+    let b = "display:block";
+    var hidden;
+    var variant;
     if (size === "large") {
       sizeCSS = "";
     }
@@ -65,10 +69,6 @@ function lichess_widget(size,user,theme,rating) {
       hide = "display:none";
     };
     switch(rating) {
-        let a = "display:none";
-        let b = "display:block";
-        var hidden;
-        var variant;
       case "chess960":
         variant = "Chess960";
         hidden = b;
