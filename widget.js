@@ -109,7 +109,7 @@ function lichess_widget(size,user,theme,rating) {
         hidden = b;
     }     
     else if (rating === "atomic") {
-        variant = "Horde";
+        variant = "Atomic";
         hidden = b;
     }     
     else if(rating === "racingKings") {
@@ -121,7 +121,7 @@ function lichess_widget(size,user,theme,rating) {
         hidden = b;
     }
     else if(rating === "ultraBullet") {
-        variant = "ultraBullet";
+        variant = "Ultra Bullet";
         hidden = b;
     }   
     else if(rating === "none" || rating === undefined) {
