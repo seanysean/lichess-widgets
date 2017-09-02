@@ -127,6 +127,7 @@ function lichess_widget(size,user,theme,rating) {
     else if(rating === "none" || rating === undefined) {
         variant = "None";
         hidden = a;
+        rating = "classical";
     }
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
