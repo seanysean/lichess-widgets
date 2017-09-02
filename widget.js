@@ -1,5 +1,5 @@
 
-function lichess_widget(size,user,theme) {
+function lichess_widget(size,user,theme,rating) {
   var widget = document.createElement("DIV");
   widget.id = "lichess_widget";
   widget.innerHTML = `Loading...`;    
@@ -80,9 +80,9 @@ function lichess_widget(size,user,theme) {
                       <a href='https://lichess.org/study/by/${user}' target='_blank' datatitle='View studies' class='fa fa-podcast'></a>
                       <a href='https://lichess.org/?user=${user}#friend' target='_blank' datatitle='Challenge' class='fa fa-delicious'></a>
                     </div>
-                    <a href='https://lichess.org/@/${user}/perf/classical' target='_blank' id='rating' datatitle='View stats'>
-                      <span id='ratingNum'>Classical: ${lichessAPI["perfs"]["classical"]["rating"]}</span>
-                      <span id='numgames'>${lichessAPI["perfs"]["classical"]["games"]} Games</span>
+                    <a href='https://lichess.org/@/${user}/perf/${rating}' target='_blank' id='rating' datatitle='View stats'>
+                      <span id='ratingNum'>Classical: ${lichessAPI["perfs"][rating]["rating"]}</span>
+                      <span id='numgames'>${lichessAPI["perfs"][rating]["games"]} Games</span>
                     </a>`;    
   }
 }
