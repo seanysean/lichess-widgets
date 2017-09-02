@@ -68,66 +68,64 @@ function lichess_widget(size,user,theme,rating) {
     else {
       hide = "display:none";
     };
-    switch(rating) {
-      case "chess960":
+    if(rating === "chess960") {
         variant = "Chess960";
         hidden = b;
-        break;
-      case "blitz":
+    }
+    else if(rating === "blitz") {
         variant = "Blitz";
         hidden = b;
-        break;
-      case "kingOfTheHill":
+    }
+    else if (rating === "kingOfTheHill") {
         variant = "King of the Hill";
         hidden = b;
-        break;
-      case "crazyhouse":
+    }
+    else if(rating === "crazyhouse") {
         variant = "Crazyhouse";
         hidden = b;
-        break;
-      case "threeCheck":
+    }
+    else if (rating === "threeCheck") {
         variant = "Three Check";
         hidden = b;
-        break;
-      case "antichess":
+    }
+    else if (rating === "antichess") {
         variant = "Antichess";
         hidden = b;
-        break;
-      case "bullet":
+    }
+    else if (rating === "bullet") {
         variant = "Bullet";
         hidden = b;
-        break;
-      case "correspondence":
+    }
+    else if (rating === "correspondence") {
         variant = "Correspondence";
         hidden = b;
-        break;
-      case "horde":
+    }
+    else if (rating === "horde") {
         variant = "Horde";
         hidden = b;
-        break;
-      case "puzzle":
+    }
+    else if (rating === "puzzle") {
         variant = "Puzzles";
         hidden = b;
-        break;      
-      case "atomic":
+    }     
+    else if (rating === "atomic") {
         variant = "Horde";
         hidden = b;
-        break;      
-      case "racingKings":
+    }     
+    else if(rating === "racingKings") {
         variant = "Racing Kings";
         hidden = b;
-        break;      
-      case "classical":
+    }      
+    else if (rating === "classical") {
         variant = "Classical";
         hidden = b;
-        break; 
-      case "ultraBullet":
+    }
+    else if(rating === "ultraBullet") {
         variant = "ultraBullet";
         hidden = b;
-        break;    
-      default:
+    }   
+    else {
         hidden = a;
-        break;
     }
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
