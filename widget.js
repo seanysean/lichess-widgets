@@ -64,6 +64,71 @@ function lichess_widget(size,user,theme,rating) {
     else {
       hide = "display:none";
     };
+    switch(rating) {
+        let a = "display:none";
+        let b = "display:block";
+        var hidden;
+        var variant;
+      case "chess960":
+        variant = "Chess960";
+        hidden = b;
+        break;
+      case "blitz":
+        variant = "Blitz";
+        hidden = b;
+        break;
+      case "kingOfTheHill":
+        variant = "King of the Hill";
+        hidden = b;
+        break;
+      case "crazyhouse":
+        variant = "Crazyhouse";
+        hidden = b;
+        break;
+      case "threeCheck":
+        variant = "Three Check";
+        hidden = b;
+        break;
+      case "antichess":
+        variant = "Antichess";
+        hidden = b;
+        break;
+      case "bullet":
+        variant = "Bullet";
+        hidden = b;
+        break;
+      case "correspondence":
+        variant = "Correspondence";
+        hidden = b;
+        break;
+      case "horde":
+        variant = "Horde";
+        hidden = b;
+        break;
+      case "puzzle":
+        variant = "Puzzles";
+        hidden = b;
+        break;      
+      case "atomic":
+        variant = "Horde";
+        hidden = b;
+        break;      
+      case "racingKings":
+        variant = "Racing Kings";
+        hidden = b;
+        break;      
+      case "classical":
+        variant = "Classical";
+        hidden = b;
+        break; 
+      case "ultraBullet":
+        variant = "ultraBullet";
+        hidden = b;
+        break;    
+      default:
+        hidden = a;
+        break;
+    }
     widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
                       <span id='title'>${titled}</span> 
@@ -80,8 +145,8 @@ function lichess_widget(size,user,theme,rating) {
                       <a href='https://lichess.org/study/by/${user}' target='_blank' datatitle='View studies' class='fa fa-podcast'></a>
                       <a href='https://lichess.org/?user=${user}#friend' target='_blank' datatitle='Challenge' class='fa fa-delicious'></a>
                     </div>
-                    <a href='https://lichess.org/@/${user}/perf/${rating}' target='_blank' id='rating' datatitle='View stats'>
-                      <span id='ratingNum'>Classical: ${lichessAPI["perfs"][rating]["rating"]}</span>
+                    <a style="${hidden} href='https://lichess.org/@/${user}/perf/${rating}' target='_blank' id='rating' datatitle='View stats'>
+                      <span id='ratingNum'>${variant}: ${lichessAPI["perfs"][rating]["rating"]}</span>
                       <span id='numgames'>${lichessAPI["perfs"][rating]["games"]} Games</span>
                     </a>`;    
   }
