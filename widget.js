@@ -26,7 +26,7 @@ function lichess_widget(size,user,theme,rating) {
     if (lichessAPI["disabled"] === true) {
       closedCSS = "display:none";
       closedCSSalt = "display:block";
-      alert(lichessAPI["disabled"];
+      alert(lichessAPI["disabled"]);
     }
     else {
       closedCSS = "display:none";
