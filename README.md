@@ -32,13 +32,15 @@ Basic guidlines for if you decide to contribute.
 If you notice any bugs, please report them in the issues section. Also, if you are able to fix the problem, consider creating a pull request.
 
 ## To Do
-- [ ] Deal with closed accounts.
+- [x] Deal with closed accounts.
 - [x] Custom rating choice.
-- [ ] Slightly more modern look.
+- [x] Slightly more modern look.
+- [ ] Enjoy :)
 
 ## Credits
 I'm not sure if this is needed... since right now I'm probably the only one using this. Anyway, here's the credits.
 
+Somewhat inspired by [rubenwardy's](https://github.com/rubenwardy) [lichess widgets](https://github.com/rubenwardy/lichess_widgets).<br>
 Icons by [Font Awesome](http://fontawesome.io/) hosted by [w3schools](https://www.w3schools.com/icons/fontawesome_icons_intro.asp).<br>
 Font ["Lato"](https://fonts.googleapis.com/css?family=Lato) from [Google Fonts](https://fonts.google.com/).<br>
 And, as mentioned earlier, [lichess.org's API](https://github.com/ornicar/lila#http-api).
