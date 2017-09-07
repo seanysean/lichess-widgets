@@ -36,6 +36,13 @@
 #lichess_widget #link:hover {
   color: #36f;
 }
+#lichess_widget.small #link #username {
+  text-overflow: ellipsis;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
 #lichess_widget #title {
   color: #aa8300;
 }
@@ -161,4 +168,4 @@
   text-align: center;
   border-top: 1px solid #ccc;
   margin-top: 3px;
-}
+} 
