@@ -32,7 +32,9 @@ Basic guidlines for if you decide to contribute.
 If you notice any bugs, please report them in the issues section. Also, if you are able to fix the problem, consider creating a pull request.
 
 ## To Do
-Perhaps a little more CSS styling, and more features.
+- [ ] Deal with closed accounts.
+- [x] Custom rating choice.
+- [ ] Slightly more modern look.
 
 ## Credits
 I'm not sure if this is needed... since right now I'm probably the only one using this. Anyway, here's the credits.
