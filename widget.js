@@ -139,11 +139,13 @@ function lichess_widget(size,user,theme,rating) {
         hidden = a;
         rating = "classical";
     }
-    widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
+    widget.innerHTML = `<span class='top-right'>
+                    <span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
                       <span id='title'>${titled}</span> 
-                      <span id='username'>${user}</span>
+                      <span>${user}</span>
                     </a>
+                    </span>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
                     <div style='${closedCSS}'>
                       <p style='${sizeCSS}' id='name'>${nameJS}</p>
