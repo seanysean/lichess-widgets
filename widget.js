@@ -30,8 +30,8 @@ function lichess_widget(size,user,theme,rating) {
       console.log("Closed");
     }
     else {
-      closedCSS = "display:none";
-      closedCSSalt = "display:block";
+      closedCSS = "display:block";
+      closedCSSalt = "display:none";
       alert("Open");
       console.log("Open");
     };
