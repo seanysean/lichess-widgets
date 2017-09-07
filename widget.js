@@ -22,6 +22,17 @@ function lichess_widget(size,user,theme,rating) {
     let b = "display:block";
     var hidden;
     var variant;
+    var closedCSSalt = "display:none";
+    var closedCSS = "display:block";
+    if (lichessAPI["disabled"] === true) {
+      closedCSS = "display:none";
+      closedCSSalt = "display:block";
+    }
+    else {
+      closedCSS = "display:none";
+      closedCSSalt = "display:block";
+      //I wish I didn't have to duplicate code like this. Any ideas?
+    }
     if (size === "large") {
       sizeCSS = "";
     }
@@ -135,19 +146,24 @@ function lichess_widget(size,user,theme,rating) {
                       <span id='username'>${user}</span>
                     </a>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
-                    <p style='${sizeCSS}' id='name'>${nameJS}</p>
-                    <div style='${sizeCSS}' id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
-                    <div style='${sizeCSS}' class='icons'>
-                      <a href='${playing}' target='_blank' style='${hide}' datatitle='View game in progress' class='fa fa-tv'></a>
-                      <a href='https://lichess.org/inbox/new?user=${user}' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
-                      <a href='${lichessAPI["url"]}' target='_blank' datatitle='View profile' class='fa fa-user'></a>
-                      <a href='https://lichess.org/@/${user}/tournaments/recent' target='_blank' datatitle='Tournaments' class='fa fa-trophy'></a>
-                      <a href='https://lichess.org/study/by/${user}' target='_blank' datatitle='View studies' class='fa fa-podcast'></a>
-                      <a href='https://lichess.org/?user=${user}#friend' target='_blank' datatitle='Challenge' class='fa fa-delicious'></a>
+                    <div style='${closedCSS}'>
+                      <p style='${sizeCSS}' id='name'>${nameJS}</p>
+                      <div style='${sizeCSS}' id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
+                      <div style='${sizeCSS}' class='icons'>
+                        <a href='${playing}' target='_blank' style='${hide}' datatitle='View game in progress' class='fa fa-tv'></a>
+                        <a href='https://lichess.org/inbox/new?user=${user}' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
+                        <a href='${lichessAPI["url"]}' target='_blank' datatitle='View profile' class='fa fa-user'></a>
+                        <a href='https://lichess.org/@/${user}/tournaments/recent' target='_blank' datatitle='Tournaments' class='fa fa-trophy'></a>
+                        <a href='https://lichess.org/study/by/${user}' target='_blank' datatitle='View studies' class='fa fa-podcast'></a>
+                        <a href='https://lichess.org/?user=${user}#friend' target='_blank' datatitle='Challenge' class='fa fa-delicious'></a>
+                      </div>
+                      <a style='${hidden}' href='https://lichess.org/@/${user}/perf/${rating}' target='_blank' id='rating' datatitle='View stats'>
+                        <span id='ratingNum'>${variant}: ${lichessAPI["perfs"][rating]["rating"]}</span>
+                        <span id='numgames'>${lichessAPI["perfs"][rating]["games"]} Games</span>
+                      </a>
                     </div>
-                    <a style='${hidden}' href='https://lichess.org/@/${user}/perf/${rating}' target='_blank' id='rating' datatitle='View stats'>
-                      <span id='ratingNum'>${variant}: ${lichessAPI["perfs"][rating]["rating"]}</span>
-                      <span id='numgames'>${lichessAPI["perfs"][rating]["games"]} Games</span>
-                    </a>`;    
+                    <div style='${closedCSSalt}' class='alt'>
+                      <p>Account closed</p>
+                    </div>`;    
   }
 }
