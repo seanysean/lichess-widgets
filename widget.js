@@ -26,14 +26,10 @@ function lichess_widget(size,user,theme,rating) {
     if (lichessAPI["disabled"] === true) {
       closedCSS = "display:none";
       closedCSSalt = "display:block";
-      alert(lichessAPI["disabled"] + " " + lichessAPI["id"]);
-      console.log("Closed");
     }
     else {
       closedCSS = "display:block";
       closedCSSalt = "display:none";
-      alert("Open");
-      console.log("Open");
     };
     if (size === "large") {
       sizeCSS = "";
