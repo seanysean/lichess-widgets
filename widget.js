@@ -26,12 +26,13 @@ function lichess_widget(size,user,theme,rating) {
     if (lichessAPI["disabled"] === true) {
       closedCSS = "display:none";
       closedCSSalt = "display:block";
+      alert(lichessAPI["disabled"];
     }
     else {
       closedCSS = "display:none";
       closedCSSalt = "display:block";
       //I wish I didn't have to duplicate code like this. Any ideas?
-    }
+    };
     if (size === "large") {
       sizeCSS = "";
     }
