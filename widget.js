@@ -27,7 +27,7 @@ function lichess_widget(size,user,theme,rating) {
       closedCSS = "display:none";
       closedCSSalt = "display:block";
       alert(lichessAPI["disabled"] + " " + lichessAPI["id"]);
-      console.log("Closed"):
+      console.log("Closed");
     }
     else {
       closedCSS = "display:none";
