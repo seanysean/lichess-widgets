@@ -1,4 +1,3 @@
-
 function lichess_widget(size,user,theme,rating) {
   var widget = document.createElement("DIV");
   widget.id = "lichess_widget";
@@ -22,17 +21,17 @@ function lichess_widget(size,user,theme,rating) {
     let b = "display:block";
     var hidden;
     var variant;
-    var closedCSSalt = "display:none";
-    var closedCSS = "display:block";
+    var closedCSSalt;
+    var closedCSS;
     if (lichessAPI["disabled"] === true) {
       closedCSS = "display:none";
       closedCSSalt = "display:block";
+      widget.classList.add("small");
     }
     else {
-      closedCSS = "display:none";
-      closedCSSalt = "display:block";
-      //I wish I didn't have to duplicate code like this. Any ideas?
-    }
+      closedCSS = "display:block";
+      closedCSSalt = "display:none";
+    };
     if (size === "large") {
       sizeCSS = "";
     }
@@ -140,11 +139,13 @@ function lichess_widget(size,user,theme,rating) {
         hidden = a;
         rating = "classical";
     }
-    widget.innerHTML = `<span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
+    widget.innerHTML = `<span class='top-right'>
+                    <span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
                       <span id='title'>${titled}</span> 
-                      <span id='username'>${user}</span>
+                      <span>${user}</span>
                     </a>
+                    </span>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
                     <div style='${closedCSS}'>
                       <p style='${sizeCSS}' id='name'>${nameJS}</p>
