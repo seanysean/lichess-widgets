@@ -1,5 +1,6 @@
+![Screen shot of one possible look](demo.png)
 # Lichess widgets
-Originally made to practice my JSON skills. Made using [lichess.org's API](https://github.com/ornicar/lila#http-api).
+Originally made to practice using JSON.[Here is a link to lichess.org's API](https://github.com/ornicar/lila#http-api).
 
 ## Usage
 #1 Simply add these lines of code to the `<head>` of your HTML document:
@@ -24,6 +25,23 @@ Originally made to practice my JSON skills. Made using [lichess.org's API](https
     the rating of that particular rating.*/
 </script>
 ```
+You can try it out [here](https://codepen.io/Chesswithsean/pen/GvzGxa).
+
+## Features
+
+1. You can add multiple widgets to one page.
+```html
+<script>
+  lichess_widget("large","chess-network","dark","atomic");
+  lichess_widget("large","seanysean","light","classical");
+</script>
+```
+2. You can make your widget small, or large.
+```
+>lichess_widget("**large**","seanysean","light","classical"); <br>
+>Change the large to small, if disired.
+```
+3. Light or dark theme.
 ## Contributing
 
 Basic guidlines for if you decide to contribute.
@@ -34,7 +52,8 @@ If you notice any bugs, please report them in the issues section. Also, if you a
 ## To Do
 - [x] Deal with closed accounts.
 - [x] Custom rating choice.
-- [x] Slightly more modern look.
+- [ ] Slightly more modern look.
+- [ ] Make "small" smaller.
 - [ ] Enjoy :)
 
 ## Credits
