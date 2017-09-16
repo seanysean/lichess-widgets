@@ -33,7 +33,7 @@ You can try it out [here](https://codepen.io/Chesswithsean/pen/GvzGxa).
 2. You can make your widget small, or large.
 ```js
 lichess_widget("large","seanysean","light","classical"); 
-//Change the first parameter (lerge) to small, if disired.
+//Change the first parameter (large) to small, if disired.
 ```
 3. Light or dark theme.
 Simply change the third parameter to "light" or "dark":
@@ -53,11 +53,7 @@ lichess_widget("large","seanysean","dark","classical");
 
 You can experiment [here](https://codepen.io/Chesswithsean/pen/GvzGxa).
 
-## Contributing
-
-Basic guidlines for if you decide to contribute.
-
-### Bugs
+## Bugs
 If you notice any bugs, please report them in the issues section.
 
 ## To Do
@@ -68,10 +64,9 @@ If you notice any bugs, please report them in the issues section.
 - [ ] Enjoy :)
 
 ## Credits
-Various things that helped me out.
 
 I learned how to use JSON at this [MDN tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON). <br>
 Somewhat inspired by [rubenwardy's](https://github.com/rubenwardy) [lichess widgets](https://github.com/rubenwardy/lichess_widgets).<br>
 Icons by [Font Awesome](http://fontawesome.io/) hosted by [w3schools](https://www.w3schools.com/icons/fontawesome_icons_intro.asp).<br>
 Font ["Lato"](https://fonts.googleapis.com/css?family=Lato) from [Google Fonts](https://fonts.google.com/).<br>
-And, as mentioned earlier, [lichess.org's API](https://github.com/ornicar/lila#http-api).
+Obviously needed, [lichess.org's API](https://github.com/ornicar/lila#http-api).
