@@ -1,5 +1,6 @@
+![Screen shot of one possible look](demo.png)
 # Lichess widgets
-Originally made to practice my JSON skills. Made using [lichess.org's API](https://github.com/ornicar/lila#http-api).
+Originally made to practice using JSON.
 
 ## Usage
 #1 Simply add these lines of code to the `<head>` of your HTML document:
@@ -15,32 +16,57 @@ Originally made to practice my JSON skills. Made using [lichess.org's API](https
 ```html
 <script>
   lichess_widget("large","seanysean","light","classical");
-  /*You can change the "large" to "small" if you'd like your widget to be smaller.
-    Change the "seanysean" to whatever lichess username you want, perhaps your own.
-    You can change "light" to "dark" for a darker theme, if you want.
-    Change "classical" to "none" if you don't want to display any ratings,
-    chess960, blitz, kingOfTheHill, crazyhouse, threeCheck, antichess, bullet,
-    correspondence, horde, puzzle, atomic, racingKings, or ultraBullet to get 
-    the rating of that particular rating.*/
+  // Change the second parameter (seanysean) to a username of your choice.
 </script>
 ```
-## Contributing
+You can try it out [here](https://codepen.io/Chesswithsean/pen/GvzGxa).
 
-Basic guidlines for if you decide to contribute.
+## Features
 
-### Bugs
-If you notice any bugs, please report them in the issues section. Also, if you are able to fix the problem, consider creating a pull request.
+1. You can add multiple widgets to one page.
+```html
+<script>
+  lichess_widget("large","chess-network","dark","atomic");
+  lichess_widget("large","seanysean","light","classical");
+</script>
+```
+2. You can make your widget small, or large.
+```js
+lichess_widget("large","seanysean","light","classical"); 
+//Change the first parameter (large) to small, if disired.
+```
+3. Light or dark theme.
+Simply change the third parameter to "light" or "dark":
+
+```js
+lichess_widget("large","seanysean","dark","classical"); 
+```
+
+4. Display your rating of choice.
+```js
+ lichess_widget("large","seanysean","light","classical");
+ // Change "classical" to "none" if you don't want to display any ratings,
+ // chess960, blitz, kingOfTheHill, crazyhouse, threeCheck, antichess, bullet,
+ // correspondence, horde, puzzle, atomic, racingKings, or ultraBullet to get 
+ // the rating of that particular rating.*/
+ ```
+
+You can experiment [here](https://codepen.io/Chesswithsean/pen/GvzGxa).
+
+## Bugs
+If you notice any bugs, please report them in the issues section.
 
 ## To Do
 - [x] Deal with closed accounts.
 - [x] Custom rating choice.
-- [x] Slightly more modern look.
+- [ ] Slightly more modern look.
+- [ ] Make "small" smaller.
 - [ ] Enjoy :)
 
 ## Credits
-I'm not sure if this is needed... since right now I'm probably the only one using this. Anyway, here's the credits.
 
+I learned how to use JSON at this [MDN tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON). <br>
 Somewhat inspired by [rubenwardy's](https://github.com/rubenwardy) [lichess widgets](https://github.com/rubenwardy/lichess_widgets).<br>
 Icons by [Font Awesome](http://fontawesome.io/) hosted by [w3schools](https://www.w3schools.com/icons/fontawesome_icons_intro.asp).<br>
 Font ["Lato"](https://fonts.googleapis.com/css?family=Lato) from [Google Fonts](https://fonts.google.com/).<br>
-And, as mentioned earlier, [lichess.org's API](https://github.com/ornicar/lila#http-api).
+Obviously needed, [lichess.org's API](https://github.com/ornicar/lila#http-api).
