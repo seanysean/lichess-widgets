@@ -164,6 +164,12 @@
 #lichess_widget #rating #numgames {
   float: right;
 }
+#lichess_widget.small #rating #numgames {
+  display: none;
+}
+#lichess_widget.small #rating #ratingNum #justNum {
+  float: right;
+}
 #lichess_widget .alt {
   text-align: center;
   margin-top: 3px;
