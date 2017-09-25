@@ -23,6 +23,9 @@ function lichess_widget(size,user,theme,rating) {
     var variant;
     var closedCSSalt;
     var closedCSS;
+    if (size === "small") {
+      widget.classList.add("small");
+    };
     if (lichessAPI["disabled"] === true) {
       closedCSS = "display:none";
       closedCSSalt = "display:block";
