@@ -162,7 +162,7 @@ function lichess_widget(size,user,theme,rating) {
                         <a href='https://lichess.org/?user=${user}#friend' target='_blank' datatitle='Challenge' class='fa fa-delicious'></a>
                       </div>
                       <a style='${hidden}' href='https://lichess.org/@/${user}/perf/${rating}' target='_blank' id='rating' datatitle='View stats'>
-                        <span id='ratingNum'>${variant}: ${lichessAPI["perfs"][rating]["rating"]}</span>
+                        <span id='ratingNum'>${variant}: <span id="justNum">${lichessAPI["perfs"][rating]["rating"]}</span></span>
                         <span id='numgames'>${lichessAPI["perfs"][rating]["games"]} Games</span>
                       </a>
                     </div>
