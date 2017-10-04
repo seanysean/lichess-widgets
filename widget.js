@@ -146,7 +146,7 @@ function lichess_widget(size,user,theme,rating) {
                     <span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
                     <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
                       <span id='title'>${titled}</span> 
-                      <span>${user}</span>
+                      <span>${lichessAPI[username]}</span>
                     </a>
                     </span>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
