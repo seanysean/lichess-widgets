@@ -1,5 +1,5 @@
 ![Screen shot of one possible look](demo.png)
-# Lichess widgets
+# Lichess widgets [![bitHound Overall Score](https://www.bithound.io/github/seanysean/lichess-widgets/badges/score.svg)](https://www.bithound.io/github/seanysean/lichess-widgets)
 Originally made to practice using JSON.
 
 ## Usage
