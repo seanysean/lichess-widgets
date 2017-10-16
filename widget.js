@@ -25,8 +25,8 @@ function lichess_widget(size,user,theme,rating) {
     var closedCSS;
     if (size === "small") {
       widget.classList.add("small");
-    };
-    if (lichessAPI["disabled"] === true) {
+    }
+    if (lichessAPI.disabled === true) {
       closedCSS = "display:none";
       closedCSSalt = "display:block";
       widget.classList.add("small");
@@ -34,7 +34,7 @@ function lichess_widget(size,user,theme,rating) {
     else {
       closedCSS = "display:block";
       closedCSSalt = "display:none";
-    };
+    }
     if (size === "large") {
       sizeCSS = "";
     }
@@ -46,41 +46,41 @@ function lichess_widget(size,user,theme,rating) {
     }
     else {
       widget.classList.add("dark");
-    };
-    if (lichessAPI["online"]) {
+    }
+    if (lichessAPI.online) {
       online = "online";
     }
     else {
       online = "offline";
-    };
-    if (lichessAPI["patron"] === true) {
+    }
+    if (lichessAPI.patron === true) {
       patron = "fa-diamond";
     }
     else {
       patron = "fa-circle";
-    };
-    if (lichessAPI["title"]) {
-      titled = lichessAPI["title"];
+    }
+    if (lichessAPI.title) {
+      titled = lichessAPI.title;
     }
     else {
       titled = "";
-    };
-    if (lichessAPI["profile"]["firstName"] && lichessAPI["profile"]["lastName"]) {
-      nameJS = lichessAPI["profile"]["firstName"] + " " + lichessAPI["profile"]["lastName"];
     }
-    else if (lichessAPI["profile"]["firstName"]) {
-      nameJS = lichessAPI["profile"]["firstName"];
+    if (lichessAPI.profile.firstName && lichessAPI.profile.lastName) {
+      nameJS = lichessAPI.profile.firstName + " " + lichessAPI.profile.lastName;
+    }
+    else if (lichessAPI.profile.firstName) {
+      nameJS = lichessAPI.profile.firstName;
     }
     else {
       nameJS = "";
-    };
-    if (lichessAPI["playing"]) {
-      playing = lichessAPI["playing"];
+    }
+    if (lichessAPI.playing) {
+      playing = lichessAPI.playing;
       hide = "display:inline";
     }
     else {
       hide = "display:none";
-    };
+    }
     if(rating === "chess960") {
         variant = "Chess960";
         hidden = b;
@@ -144,30 +144,30 @@ function lichess_widget(size,user,theme,rating) {
     }
     widget.innerHTML = `<span class='top-right'>
                     <span id='circle' datatitle='${online}' class='fa ${patron} ${online}'></span> 
-                    <a id='link' target='_blank' href='${lichessAPI["url"]}'> 
+                    <a id='link' target='_blank' href='${lichessAPI.url}'> 
                       <span id='title'>${titled}</span> 
-                      <span>${lichessAPI["username"]}</span>
+                      <span>${lichessAPI.username}</span>
                     </a>
                     </span>
                     <a href='https://lichess.org' target='_blank' class='lichess'>Lichess.org</a>
                     <div style='${closedCSS}'>
                       <p style='${sizeCSS}' id='name'>${nameJS}</p>
-                      <div style='${sizeCSS}' id='bio'>${lichessAPI["profile"]["bio"]?lichessAPI["profile"]["bio"]:""}</div>
+                      <div style='${sizeCSS}' id='bio'>${lichessAPI.profile.bio?lichessAPI.profile.bio:""}</div>
                       <div style='${sizeCSS}' class='icons'>
                         <a href='${playing}' target='_blank' style='${hide}' datatitle='View game in progress' class='fa fa-tv'></a>
                         <a href='https://lichess.org/inbox/new?user=${user}' target='_blank' datatitle='Message' class='fa fa-envelope'></a>
-                        <a href='${lichessAPI["url"]}' target='_blank' datatitle='View profile' class='fa fa-user'></a>
+                        <a href='${lichessAPI.url}' target='_blank' datatitle='View profile' class='fa fa-user'></a>
                         <a href='https://lichess.org/@/${user}/tournaments/recent' target='_blank' datatitle='Tournaments' class='fa fa-trophy'></a>
                         <a href='https://lichess.org/study/by/${user}' target='_blank' datatitle='View studies' class='fa fa-podcast'></a>
                         <a href='https://lichess.org/?user=${user}#friend' target='_blank' datatitle='Challenge' class='fa fa-delicious'></a>
                       </div>
                       <a style='${hidden}' href='https://lichess.org/@/${user}/perf/${rating}' target='_blank' id='rating' datatitle='View stats'>
-                        <span id='ratingNum'>${variant}: <span id="justNum">${lichessAPI["perfs"][rating]["rating"]}</span></span>
-                        <span id='numgames'>${lichessAPI["perfs"][rating]["games"]} Games</span>
+                        <span id='ratingNum'>${variant}: <span id="justNum">${lichessAPI.perfs[rating].rating}</span></span>
+                        <span id='numgames'>${lichessAPI.perfs[rating].games} Games</span>
                       </a>
                     </div>
                     <div style='${closedCSSalt}' class='alt'>
                       <p>Account closed</p>
                     </div>`;    
-  }
+  };
 }
