@@ -133,6 +133,10 @@ function lichess_widget(size,user,theme,rating) {
         variant = "Classical";
         hidden = b;
     }
+    else if (rating === "rapid") {
+        variant = "Rapid";
+        hidden = b;
+    }
     else if(rating === "ultraBullet") {
         variant = "Ultra Bullet";
         hidden = b;
